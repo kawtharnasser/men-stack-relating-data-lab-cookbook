@@ -37,24 +37,23 @@ app.use(passUsertoView)
 // Require Controllers
 const authCtrl = require('./controllers/auth');
 
+// server.js
+const recipesController = require('./controllers/recipes.js');
+const ingredientsController = require('./controllers/ingredients.js');
+
 //use controller 
 app.use('/auth',authCtrl)//redirect all the rout that start with "/auth" to controller/auth
+// server.js
+
+// below middleware
+app.use('/recipes', recipesController);
+app.use('/ingredients', ingredientsController);
 
 //Root Rout
 
 app.get('/', async(req,res)=>{
   res.render('index.ejs')
 })
-
-
-// Rout for testing
-// VIP-lounge
-app.get("/vip-lounge",isSignedIn, (req,res)=>{
-  res.send(`Welcome to the party ${req.session.user.username}`)
-})
-
-
-
 
 
 
