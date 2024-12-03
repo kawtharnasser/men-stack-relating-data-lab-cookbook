@@ -46,8 +46,8 @@ app.use('/auth',authCtrl)//redirect all the rout that start with "/auth" to cont
 // server.js
 
 // below middleware
-app.use('/recipes', recipesController);
-app.use('/ingredients', ingredientsController);
+app.use('/recipes', isSignedIn,recipesController);
+app.use('/ingredients', isSignedIn, ingredientsController);
 
 //Root Rout
 
