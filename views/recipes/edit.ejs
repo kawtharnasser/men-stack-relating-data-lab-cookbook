@@ -1,5 +1,9 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <a href="/ingredients/new">Add New Ingredient</a>
 
   <h1>Edit <%= recipe.name %></h1>
 
@@ -13,8 +17,20 @@
     id="name"
     value="<%= recipe.name %>"
   /><br>
+
+
+  <label for="ingredient">Ingredients</label><br>
+  <% ingredients.forEach(ingredient => {%>
+    <label>
+    <input type="checkbox" name="ingredients" value="<%= ingredient._id %>">
+      <%= ingredient.name %>
+    </label><br>
+  <%});
+  %>
+
+
   <label for="city">Instructions:</label>
-  <textarea name="instructions" id="instructions" value="<%= recipe.instructions %>" ></textarea><br>
+  <textarea name="instructions" id="instructions" value="<%= recipe.instructions %>" ><%= recipe.instructions %></textarea><br>
   <button type="submit">Edit Listing</button>
 </form>
 

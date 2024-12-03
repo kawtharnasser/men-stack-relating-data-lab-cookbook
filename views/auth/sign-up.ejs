@@ -1,19 +1,27 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1>Create a New Account</h1>
+  <div class="signup-container">
+        <h1>Create a New Account</h1>
 
-  <form action="/auth/sign-up" method="post">
-    <label>Username:<br></label>
-    <input type="text" name="username"/>
-    <br>
-    <label>Password: <br></label>
-    <input type="password" name="password">
-    <br>
-    <label>Confirm Password:<br></label>
-    <input type="password" name="confirmPassword">
-    <br>
-    <br>
-    <button type="submit">Sign up</button>
+        <form action="/auth/sign-up" method="post">
+          <label>Username:<br></label>
+          <input type="text" name="username"/>
+          <br>
+          <label>Password: <br></label>
+          <input type="password" name="password">
+          <br>
+          <label>Confirm Password:<br></label>
+          <input type="password" name="confirmPassword">
+          <br>
+          <br>
+          <button type="submit">Sign up</button>
     
-  </form>
+          </form>
+        
+  </div>
 </body>
