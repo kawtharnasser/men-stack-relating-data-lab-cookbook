@@ -10,5 +10,11 @@
     <a href="/recipes/new">Add New Recipe</a>
 
     <h1>Here's All the Recipes</h1>
+    
+    <ul>
+      <% recipes.forEach(recipe => {%>
+        <a href="/recipes/<%= recipe._id %>"><li>A <%= recipe.name %> recipe || Created by <%= recipe.owner.username %></li></a>
+      <%}); %>
+    </ul>
   </body>
 </html>

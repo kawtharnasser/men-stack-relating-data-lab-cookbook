@@ -1,0 +1,31 @@
+<body>
+  <%- include('../partials/_navbar.ejs') %> 
+  <a href="/recipes">Back to Recipes</a>
+
+  <h1>A <%= recipe.name%> Recipe</h1>
+  <h2>Instructions</h2>
+
+  <%
+  const instructions = recipe.instructions
+  const instructionsArray = instructions.split("\n")
+  instructionsArray.forEach(element => {%>
+    <p><%= element %></p>
+  <%});
+
+  
+  %>
+  <h2>Owner</h2>
+  <% if (recipe.owner._id.equals(user._id)) { %>
+    <p>You own this Recipe!</p>
+
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="post">
+      <button type="submit">Delete This Recipe</button>
+    </form>
+    
+    <a href="/recipes/<%= recipe._id %>/edit">Edit this Recipe</a>
+
+  <% } else { %>
+    <p>This Recipe was created by <%= recipe.owner.username %></p>
+  <% } %>
+
+</body>
