@@ -8,10 +8,10 @@
   <h1>Edit <%= recipe.name %></h1>
 
   <!-- views/listings/edit.ejs -->
-
-<form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
-  <label for="name">Name:</label>
-  <input
+<div class="edit-body">
+  <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
+    <label for="name">Name:</label>
+    <input
     type="text"
     name="name"
     id="name"
@@ -32,7 +32,7 @@
   <label for="city">Instructions:</label>
   <textarea name="instructions" id="instructions" value="<%= recipe.instructions %>" ><%= recipe.instructions %></textarea><br>
   <button type="submit">Edit Listing</button>
-</form>
-
+  </form>
+</div>
 
 </body>

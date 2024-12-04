@@ -10,15 +10,18 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <a href="/recipes/new">Add New Recipe</a>
-    <a href="/ingredients/new">Add Ingredients</a>
-
-    <h1>Here's All the Recipes</h1>
+    <div class="all-apps-body">
+      <h1>Here's All the Recipes</h1>
+      <div class="all-apps-header">
     
-    <ul>
-      <% recipes.forEach(recipe => {%>
+        <a class="add-app-link" href="/recipes/new">Add New Recipe</a>
+        <a class="add-app-link" href="/ingredients/new">Add Ingredients</a>
+      </div>
+      <ul>
+        <% recipes.forEach(recipe => {%>
         <a href="/recipes/<%= recipe._id %>"><li>A <%= recipe.name %> recipe || Created by <%= recipe.owner.username %></li></a>
-      <%}); %>
-    </ul>
+        <%}); %>
+      </ul>
+    </div>
   </body>
 </html>

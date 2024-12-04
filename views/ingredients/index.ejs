@@ -3,13 +3,16 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <a href="/ingredients/new">Add New Ingredient</a>
-  <a href="/recipes/">Recipes</a>
-
-  <h1>Here's All the Ingredients</h1>
-  <ul>
-    <% ingredients.forEach(ingredient => {%>
-      <li> <%= ingredient.name %></li>
-    <%}); %>
-  </ul>
+  <div class="all-apps-body">
+    <h1>Here's All the Ingredients</h1>
+    <div class="all-apps-header">
+      <a class="add-app-link" href="/ingredients/new">Add New Ingredient</a>
+    </div>  
+    
+    <ul>
+      <% ingredients.forEach(ingredient => {%>
+      <li style="  color: rgb(37, 14, 91); border-radius: 5px; padding: 10px; margin: 30px; list-style: circle; width: 100%;border-bottom: 1px solid black;"> <%= ingredient.name %></li>
+      <%}); %>
+    </ul>
+  </div>
 </body>

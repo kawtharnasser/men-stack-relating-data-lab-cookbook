@@ -3,9 +3,10 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %> 
-  <a href="/recipes">Back to Recipes</a>
-
+  
   <h1>A <%= recipe.name%> Recipe</h1>
+ 
+  <a href="/recipes">Back to Recipes</a>
   <h2>Ingredients</h2>
   <ol>
   <%  
@@ -38,7 +39,7 @@
   <% if (recipe.owner._id.equals(user._id)) { %>
     <p>You own this Recipe!</p>
 
-    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="post">
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="post" style="background-color:#f6e7e7; padding: 0;">
       <button type="submit">Delete This Recipe</button>
     </form>
     
